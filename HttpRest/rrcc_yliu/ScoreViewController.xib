@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScoreViewController">
+            <connections>
+                <outlet property="_tableView" destination="raX-Rm-JiY" id="DFL-BG-jvZ"/>
+                <outlet property="currentScoreLabel" destination="noe-ve-mUe" id="HCb-cv-E8J"/>
+                <outlet property="headerView" destination="wCB-8p-cyl" id="t7p-mC-2mn"/>
+                <outlet property="scoreLabel" destination="a5b-O6-Fsd" id="0vU-0B-35W"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fKQ-0V-Yns"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-8p-cyl">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="Br4-W4-Pje">
+                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Br4-W4-Pje" secondAttribute="height" multiplier="1:1" id="yOr-ga-MlL"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1500分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5b-O6-Fsd">
+                            <rect key="frame" x="68" y="30" width="63" height="30"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.18823529410000001" green="0.62352941179999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前积分" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="noe-ve-mUe">
+                            <rect key="frame" x="68" y="0.0" width="56" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Br4-W4-Pje" secondAttribute="bottom" id="83r-XS-ke8"/>
+                        <constraint firstItem="Br4-W4-Pje" firstAttribute="top" secondItem="wCB-8p-cyl" secondAttribute="top" id="KuS-6f-G35"/>
+                        <constraint firstItem="Br4-W4-Pje" firstAttribute="leading" secondItem="wCB-8p-cyl" secondAttribute="leading" id="Nkf-f7-cAl"/>
+                        <constraint firstItem="a5b-O6-Fsd" firstAttribute="top" secondItem="noe-ve-mUe" secondAttribute="bottom" id="U27-wb-IcE"/>
+                        <constraint firstItem="noe-ve-mUe" firstAttribute="height" secondItem="a5b-O6-Fsd" secondAttribute="height" id="UoH-Yr-TRE"/>
+                        <constraint firstAttribute="bottom" secondItem="a5b-O6-Fsd" secondAttribute="bottom" id="Xa6-PD-5xL"/>
+                        <constraint firstItem="noe-ve-mUe" firstAttribute="top" secondItem="wCB-8p-cyl" secondAttribute="top" id="Z2Q-Pe-Oob"/>
+                        <constraint firstItem="noe-ve-mUe" firstAttribute="leading" secondItem="Br4-W4-Pje" secondAttribute="trailing" constant="8" id="oFS-Cs-o3q"/>
+                        <constraint firstItem="a5b-O6-Fsd" firstAttribute="leading" secondItem="noe-ve-mUe" secondAttribute="leading" id="oju-Lx-tLu"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="raX-Rm-JiY">
+                    <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                    <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="sRk-15-k06"/>
+                        <outlet property="delegate" destination="-1" id="8hK-KR-BPs"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="raX-Rm-JiY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3JB-dg-qq0"/>
+                <constraint firstAttribute="bottom" secondItem="raX-Rm-JiY" secondAttribute="bottom" id="AKY-Fs-FX6"/>
+                <constraint firstItem="raX-Rm-JiY" firstAttribute="top" secondItem="wCB-8p-cyl" secondAttribute="bottom" id="CgW-y7-P2L"/>
+                <constraint firstItem="wCB-8p-cyl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cSq-38-Rjc"/>
+                <constraint firstItem="wCB-8p-cyl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="d2P-2C-faP"/>
+                <constraint firstAttribute="trailing" secondItem="wCB-8p-cyl" secondAttribute="trailing" id="efO-gU-e46"/>
+                <constraint firstAttribute="trailing" secondItem="raX-Rm-JiY" secondAttribute="trailing" id="gzY-Rk-iqi"/>
+                <constraint firstItem="wCB-8p-cyl" firstAttribute="width" secondItem="wCB-8p-cyl" secondAttribute="height" multiplier="16:3" id="zch-dj-oxG"/>
+            </constraints>
+            <point key="canvasLocation" x="404" y="343"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="score" width="54" height="54"/>
+    </resources>
+</document>

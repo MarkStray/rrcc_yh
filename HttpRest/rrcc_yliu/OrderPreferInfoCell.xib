@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="OrderPreferInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vnu-yP-ljd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SH258894792" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAp-qu-V6h">
+                                <rect key="frame" x="96" y="10" width="208" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PXM-cd-NA6">
+                                <rect key="frame" x="16" y="38" width="288" height="1"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="PXM-cd-NA6" secondAttribute="height" multiplier="288:1" id="jY0-Sw-crK"/>
+                                    <constraint firstAttribute="height" constant="1" id="vMY-KG-VHX"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jY0-Sw-crK"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单号    :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kNj-bt-Y0S">
+                                <rect key="frame" x="16" y="10" width="80" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="WGa-Re-0gL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kNj-bt-Y0S" firstAttribute="centerY" secondItem="Vnu-yP-ljd" secondAttribute="centerY" id="1bn-wI-QzB"/>
+                            <constraint firstAttribute="trailing" secondItem="PXM-cd-NA6" secondAttribute="trailing" constant="16" id="2RD-D0-ue2"/>
+                            <constraint firstItem="dAp-qu-V6h" firstAttribute="centerY" secondItem="kNj-bt-Y0S" secondAttribute="centerY" id="7r9-OJ-pa5"/>
+                            <constraint firstAttribute="trailing" secondItem="dAp-qu-V6h" secondAttribute="trailing" constant="16" id="9QL-Mz-CqE"/>
+                            <constraint firstItem="dAp-qu-V6h" firstAttribute="leading" secondItem="kNj-bt-Y0S" secondAttribute="trailing" id="GD3-YE-TYh"/>
+                            <constraint firstAttribute="bottom" secondItem="PXM-cd-NA6" secondAttribute="bottom" id="MsS-GE-EkV"/>
+                            <constraint firstAttribute="width" secondItem="Vnu-yP-ljd" secondAttribute="height" multiplier="64:7" id="QKC-FA-lH0"/>
+                            <constraint firstItem="dAp-qu-V6h" firstAttribute="top" secondItem="Vnu-yP-ljd" secondAttribute="top" constant="10" id="SF9-8M-XBe"/>
+                            <constraint firstItem="PXM-cd-NA6" firstAttribute="leading" secondItem="Vnu-yP-ljd" secondAttribute="leading" constant="16" id="SFd-lt-jtR"/>
+                            <constraint firstItem="kNj-bt-Y0S" firstAttribute="leading" secondItem="Vnu-yP-ljd" secondAttribute="leading" constant="16" id="lAY-18-ca4"/>
+                            <constraint firstItem="kNj-bt-Y0S" firstAttribute="top" secondItem="Vnu-yP-ljd" secondAttribute="top" constant="10" id="sYk-ob-btF"/>
+                            <constraint firstItem="PXM-cd-NA6" firstAttribute="top" secondItem="dAp-qu-V6h" secondAttribute="bottom" constant="10" id="vav-XW-Hv0"/>
+                            <constraint firstAttribute="bottom" secondItem="PXM-cd-NA6" secondAttribute="bottom" id="veG-8N-mBe"/>
+                            <constraint firstItem="dAp-qu-V6h" firstAttribute="top" secondItem="kNj-bt-Y0S" secondAttribute="top" id="zGC-qo-IbP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QKC-FA-lH0"/>
+                                <exclude reference="1bn-wI-QzB"/>
+                                <exclude reference="veG-8N-mBe"/>
+                                <exclude reference="7r9-OJ-pa5"/>
+                                <exclude reference="zGC-qo-IbP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Vnu-yP-ljd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="e3M-BU-4iO"/>
+                    <constraint firstAttribute="bottom" secondItem="Vnu-yP-ljd" secondAttribute="bottom" id="hOV-5h-qyh"/>
+                    <constraint firstAttribute="trailing" secondItem="Vnu-yP-ljd" secondAttribute="trailing" id="tjP-kN-Azh"/>
+                    <constraint firstItem="Vnu-yP-ljd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="x4O-es-21e"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="detailLabel" destination="dAp-qu-V6h" id="unu-qT-bU4"/>
+                <outlet property="lineView" destination="PXM-cd-NA6" id="UHf-wM-M40"/>
+                <outlet property="titleLabel" destination="kNj-bt-Y0S" id="4wU-n2-Zcq"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

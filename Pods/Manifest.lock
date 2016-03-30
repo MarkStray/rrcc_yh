@@ -1,0 +1,47 @@
+PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - JSONKit (HEAD based on 1.5pre)
+  - MBProgressHUD (0.9.1)
+  - Reachability (3.0.0)
+  - REFrostedViewController (2.4.8)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.0)
+  - JSONKit (HEAD)
+  - MBProgressHUD (~> 0.9.1)
+  - Reachability (~> 3.0.0)
+  - REFrostedViewController (~> 2.4)
+  - SDWebImage (~> 3.7)
+
+SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  Reachability: 31e4272bd8378e094beaf6609dc182c85c4e6574
+  REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+
+COCOAPODS: 0.39.0

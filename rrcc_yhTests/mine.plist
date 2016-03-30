@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+    <array>
+        <dict>
+            <key>img</key>
+            <string>mine-order</string>
+            <key>title</key>
+            <string>我的订单</string>
+        </dict>
+    </array>
+    
+    <array>
+        <dict>
+            <key>img</key>
+            <string>mine-balance</string>
+            <key>title</key>
+            <string>我的余额</string>
+        </dict>
+        <dict>
+            <key>img</key>
+            <string>mine-redpage</string>
+            <key>title</key>
+            <string>我的红包</string>
+        </dict>
+        <dict>
+            <key>img</key>
+            <string>mine-score</string>
+            <key>title</key>
+            <string>我的积分</string>
+        </dict>
+    </array>
+    
+    <array>
+        <dict>
+            <key>img</key>
+            <string>mine-share</string>
+            <key>title</key>
+            <string>把人人菜场分享给邻居</string>
+        </dict>
+        <dict>
+            <key>img</key>
+            <string>mine-call</string>
+            <key>title</key>
+            <string>客服电话:4000-285-927</string>
+        </dict>
+        <dict>
+            <key>img</key>
+            <string>mine-help</string>
+            <key>title</key>
+            <string>常见问题</string>
+        </dict>
+    </array>
+
+</array>
+    
+</plist>
