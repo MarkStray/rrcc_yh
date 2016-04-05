@@ -1,0 +1,2 @@
+# Ignore some like svn
+.svn/*

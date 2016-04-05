@@ -31,29 +31,33 @@
 
 #pragma mark - 发起支付
 ////////////////////////////////////////////////////////////////////////
-#define isTest 0
+
 
 // 发起支付
 - (void)sendPayType:(PayEngineType)payType totalPrice:(NSString *)totalPrice orderModel:(UserOrderDetailModel *)orderModel {
     DLog(@"支付金额: %@",totalPrice);
+    
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TestSwitch" ofType:@"plist"];
+    NSDictionary *testDict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    BOOL isTest = [(NSNumber *)testDict[@"isTest"] boolValue];
+
     if (payType == PayEngineTypeWX) {/*微信支付*/
         
-#if isTest == 1
-        [self sendWXPayTotalPrice:@"1" orderModel:orderModel];
-#else
-        NSString *WxpayPrice = [NSString stringWithFormat:@"%.f",totalPrice.floatValue * 100];//参数值不能带小数点 默认为分
-        [self sendWXPayTotalPrice:WxpayPrice orderModel:orderModel];
-#endif
-        
+        if (isTest) {
+            [self sendWXPayTotalPrice:@"1" orderModel:orderModel];
+        } else {
+            NSString *WxpayPrice = [NSString stringWithFormat:@"%.f",totalPrice.floatValue * 100];//参数值不能带小数点 默认为分
+            [self sendWXPayTotalPrice:WxpayPrice orderModel:orderModel];
+        }
         
     } else if (payType == PayEngineTypeAli) { /*支付宝支付*/
         
         
-#if isTest == 1
-        [self sendAliPayTotalPrice:@"0.01" orderModel:orderModel];
-#else
-        [self sendAliPayTotalPrice:totalPrice orderModel:orderModel];
-#endif
+        if (isTest) {
+            [self sendAliPayTotalPrice:@"0.01" orderModel:orderModel];
+        } else {
+            [self sendAliPayTotalPrice:totalPrice orderModel:orderModel];
+        }
         
     }
 

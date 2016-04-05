@@ -6,122 +6,198 @@
 //  Copyright (c) 2013 cloudling. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
 #import "MASUtilities.h"
-
-@protocol MASConstraintDelegate;
 
 /**
  *	Enables Constraints to be created with chainable syntax
  *  Constraint can represent single NSLayoutConstraint (MASViewConstraint) 
  *  or a group of NSLayoutConstraints (MASComposisteConstraint)
  */
-@protocol MASConstraint <NSObject>
+@interface MASConstraint : NSObject
 
-/**
- *	Usually MASConstraintMaker but could be a parent MASConstraint
- */
-@property (nonatomic, weak) id<MASConstraintDelegate> delegate;
+// Chaining Support
 
 /**
  *	Modifies the NSLayoutConstraint constant,
- *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following 
+ *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
  *  NSLayoutAttributeTop, NSLayoutAttributeLeft, NSLayoutAttributeBottom, NSLayoutAttributeRight
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^insets)(MASEdgeInsets insets);
+- (MASConstraint * (^)(MASEdgeInsets insets))insets;
 
 /**
  *	Modifies the NSLayoutConstraint constant,
  *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
  *  NSLayoutAttributeWidth, NSLayoutAttributeHeight
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^sizeOffset)(CGSize offset);
+- (MASConstraint * (^)(CGSize offset))sizeOffset;
 
 /**
  *	Modifies the NSLayoutConstraint constant,
  *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
  *  NSLayoutAttributeCenterX, NSLayoutAttributeCenterY
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^centerOffset)(CGPoint offset);
-
+- (MASConstraint * (^)(CGPoint offset))centerOffset;
 
 /**
  *	Modifies the NSLayoutConstraint constant
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^offset)(CGFloat offset);
+- (MASConstraint * (^)(CGFloat offset))offset;
+
+/**
+ *  Modifies the NSLayoutConstraint constant based on a value type
+ */
+- (MASConstraint * (^)(NSValue *value))valueOffset;
 
 /**
  *	Sets the NSLayoutConstraint multiplier property
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^multipliedBy)(CGFloat multiplier);
+- (MASConstraint * (^)(CGFloat multiplier))multipliedBy;
 
 /**
  *	Sets the NSLayoutConstraint multiplier to 1.0/dividedBy
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^dividedBy)(CGFloat divider);
+- (MASConstraint * (^)(CGFloat divider))dividedBy;
 
 /**
  *	Sets the NSLayoutConstraint priority to a float or MASLayoutPriority
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^priority)(MASLayoutPriority priority);
+- (MASConstraint * (^)(MASLayoutPriority priority))priority;
 
 /**
  *	Sets the NSLayoutConstraint priority to MASLayoutPriorityLow
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^priorityLow)();
+- (MASConstraint * (^)())priorityLow;
 
 /**
  *	Sets the NSLayoutConstraint priority to MASLayoutPriorityMedium
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^priorityMedium)();
+- (MASConstraint * (^)())priorityMedium;
 
 /**
  *	Sets the NSLayoutConstraint priority to MASLayoutPriorityHigh
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^priorityHigh)();
+- (MASConstraint * (^)())priorityHigh;
 
 /**
  *	Sets the constraint relation to NSLayoutRelationEqual
  *  returns a block which accepts one of the following:
- *    MASViewAttribute, UIView, NSNumber, NSArray
+ *    MASViewAttribute, UIView, NSValue, NSArray
  *  see readme for more details.
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^equalTo)(id attr);
+- (MASConstraint * (^)(id attr))equalTo;
 
 /**
  *	Sets the constraint relation to NSLayoutRelationGreaterThanOrEqual
  *  returns a block which accepts one of the following:
- *    MASViewAttribute, UIView, NSNumber, NSArray
+ *    MASViewAttribute, UIView, NSValue, NSArray
  *  see readme for more details.
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^greaterThanOrEqualTo)(id attr);
+- (MASConstraint * (^)(id attr))greaterThanOrEqualTo;
 
 /**
  *	Sets the constraint relation to NSLayoutRelationLessThanOrEqual
  *  returns a block which accepts one of the following:
- *    MASViewAttribute, UIView, NSNumber, NSArray
+ *    MASViewAttribute, UIView, NSValue, NSArray
  *  see readme for more details.
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^lessThanOrEqualTo)(id attr);
+- (MASConstraint * (^)(id attr))lessThanOrEqualTo;
 
 /**
- *	optional semantic property which has no effect but improves the readability of constraint
+ *	Optional semantic property which has no effect but improves the readability of constraint
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> with;
+- (MASConstraint *)with;
+
+/**
+ *	Optional semantic property which has no effect but improves the readability of constraint
+ */
+- (MASConstraint *)and;
+
+/**
+ *	Creates a new MASCompositeConstraint with the called attribute and reciever
+ */
+- (MASConstraint *)left;
+- (MASConstraint *)top;
+- (MASConstraint *)right;
+- (MASConstraint *)bottom;
+- (MASConstraint *)leading;
+- (MASConstraint *)trailing;
+- (MASConstraint *)width;
+- (MASConstraint *)height;
+- (MASConstraint *)centerX;
+- (MASConstraint *)centerY;
+- (MASConstraint *)baseline;
+
+#if TARGET_OS_IPHONE || TARGET_OS_TV
+
+- (MASConstraint *)leftMargin;
+- (MASConstraint *)rightMargin;
+- (MASConstraint *)topMargin;
+- (MASConstraint *)bottomMargin;
+- (MASConstraint *)leadingMargin;
+- (MASConstraint *)trailingMargin;
+- (MASConstraint *)centerXWithinMargins;
+- (MASConstraint *)centerYWithinMargins;
+
+#endif
+
 
 /**
  *	Sets the constraint debug name
  */
-@property (nonatomic, copy, readonly) id<MASConstraint> (^key)(id key);
+- (MASConstraint * (^)(id key))key;
+
+// NSLayoutConstraint constant Setters
+// for use outside of mas_updateConstraints/mas_makeConstraints blocks
 
 /**
- *  Whether or not to check for an existing constraint instead of adding constraint
+ *	Modifies the NSLayoutConstraint constant,
+ *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
+ *  NSLayoutAttributeTop, NSLayoutAttributeLeft, NSLayoutAttributeBottom, NSLayoutAttributeRight
  */
-@property (nonatomic, assign) BOOL updateExisting;
+- (void)setInsets:(MASEdgeInsets)insets;
 
 /**
- *	Creates a NSLayoutConstraint. The constraint is installed to the first view or the or the closest common superview of the first and second view. 
+ *	Modifies the NSLayoutConstraint constant,
+ *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
+ *  NSLayoutAttributeWidth, NSLayoutAttributeHeight
+ */
+- (void)setSizeOffset:(CGSize)sizeOffset;
+
+/**
+ *	Modifies the NSLayoutConstraint constant,
+ *  only affects MASConstraints in which the first item's NSLayoutAttribute is one of the following
+ *  NSLayoutAttributeCenterX, NSLayoutAttributeCenterY
+ */
+- (void)setCenterOffset:(CGPoint)centerOffset;
+
+/**
+ *	Modifies the NSLayoutConstraint constant
+ */
+- (void)setOffset:(CGFloat)offset;
+
+
+// NSLayoutConstraint Installation support
+
+#if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_OS_TV)
+/**
+ *  Whether or not to go through the animator proxy when modifying the constraint
+ */
+@property (nonatomic, copy, readonly) MASConstraint *animator;
+#endif
+
+/**
+ *  Activates an NSLayoutConstraint if it's supported by an OS. 
+ *  Invokes install otherwise.
+ */
+- (void)activate;
+
+/**
+ *  Deactivates previously installed/activated NSLayoutConstraint.
+ */
+- (void)deactivate;
+
+/**
+ *	Creates a NSLayoutConstraint and adds it to the appropriate view.
  */
 - (void)install;
 
@@ -132,12 +208,44 @@
 
 @end
 
-@protocol MASConstraintDelegate <NSObject>
 
 /**
- *	Notifies the delegate when the constraint needs to be replaced with another constraint. For example 
- *  A MASViewConstraint may turn into a MASCompositeConstraint when an array is passed to one of the equality blocks
+ *  Convenience auto-boxing macros for MASConstraint methods.
+ *
+ *  Defining MAS_SHORTHAND_GLOBALS will turn on auto-boxing for default syntax.
+ *  A potential drawback of this is that the unprefixed macros will appear in global scope.
  */
-- (void)constraint:(id<MASConstraint>)constraint shouldBeReplacedWithConstraint:(id<MASConstraint>)replacementConstraint;
+#define mas_equalTo(...)                 equalTo(MASBoxValue((__VA_ARGS__)))
+#define mas_greaterThanOrEqualTo(...)    greaterThanOrEqualTo(MASBoxValue((__VA_ARGS__)))
+#define mas_lessThanOrEqualTo(...)       lessThanOrEqualTo(MASBoxValue((__VA_ARGS__)))
+
+#define mas_offset(...)                  valueOffset(MASBoxValue((__VA_ARGS__)))
+
+
+#ifdef MAS_SHORTHAND_GLOBALS
+
+#define equalTo(...)                     mas_equalTo(__VA_ARGS__)
+#define greaterThanOrEqualTo(...)        mas_greaterThanOrEqualTo(__VA_ARGS__)
+#define lessThanOrEqualTo(...)           mas_lessThanOrEqualTo(__VA_ARGS__)
+
+#define offset(...)                      mas_offset(__VA_ARGS__)
+
+#endif
+
+
+@interface MASConstraint (AutoboxingSupport)
+
+/**
+ *  Aliases to corresponding relation methods (for shorthand macros)
+ *  Also needed to aid autocompletion
+ */
+- (MASConstraint * (^)(id attr))mas_equalTo;
+- (MASConstraint * (^)(id attr))mas_greaterThanOrEqualTo;
+- (MASConstraint * (^)(id attr))mas_lessThanOrEqualTo;
+
+/**
+ *  A dummy method to aid autocompletion
+ */
+- (MASConstraint * (^)(id offset))mas_offset;
 
 @end

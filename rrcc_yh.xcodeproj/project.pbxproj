@@ -128,6 +128,11 @@
 		CE8ABD751BAC041B00827B4F /* RCTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ABD741BAC041B00827B4F /* RCTabBarViewController.m */; };
 		CE8ABD7B1BAC05A600827B4F /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ABD7A1BAC05A600827B4F /* CategoryViewController.m */; };
 		CE8ABD7E1BAC05B000827B4F /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8ABD7D1BAC05B000827B4F /* MineViewController.m */; };
+		CE8D9EE71CAE628700CED52B /* TestSwitch.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE8D9EE61CAE628700CED52B /* TestSwitch.plist */; };
+		CE8D9EF31CAE809A00CED52B /* QJCheckVersionUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9EEE1CAE809A00CED52B /* QJCheckVersionUpdate.m */; };
+		CE8D9EF51CAE809A00CED52B /* QJVersionUpdateVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9EF21CAE809A00CED52B /* QJVersionUpdateVIew.m */; };
+		CE8D9EFA1CAE81B300CED52B /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9EF61CAE81B300CED52B /* MASConstraint.m */; };
+		CE8D9EFB1CAE81B300CED52B /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8D9EF91CAE81B300CED52B /* ViewController+MASAdditions.m */; };
 		CE9642E41BB12A3C00AFD941 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9642E31BB12A3C00AFD941 /* SearchResultsViewController.m */; };
 		CE9643341BB3782100AFD941 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9643331BB3782100AFD941 /* HomeViewController.m */; };
 		CE9643371BB3AA9A00AFD941 /* MainBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9643361BB3AA9A00AFD941 /* MainBaseCell.m */; };
@@ -554,6 +559,15 @@
 		CE8ABD7A1BAC05A600827B4F /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		CE8ABD7C1BAC05B000827B4F /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		CE8ABD7D1BAC05B000827B4F /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		CE8D9EE61CAE628700CED52B /* TestSwitch.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TestSwitch.plist; sourceTree = "<group>"; };
+		CE8D9EED1CAE809A00CED52B /* QJCheckVersionUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QJCheckVersionUpdate.h; sourceTree = "<group>"; };
+		CE8D9EEE1CAE809A00CED52B /* QJCheckVersionUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QJCheckVersionUpdate.m; sourceTree = "<group>"; };
+		CE8D9EF11CAE809A00CED52B /* QJVersionUpdateVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QJVersionUpdateVIew.h; sourceTree = "<group>"; };
+		CE8D9EF21CAE809A00CED52B /* QJVersionUpdateVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QJVersionUpdateVIew.m; sourceTree = "<group>"; };
+		CE8D9EF61CAE81B300CED52B /* MASConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASConstraint.m; sourceTree = "<group>"; };
+		CE8D9EF71CAE81B300CED52B /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
+		CE8D9EF81CAE81B300CED52B /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
+		CE8D9EF91CAE81B300CED52B /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		CE94CE821C3A0C4900E33298 /* EnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnumHeader.h; sourceTree = "<group>"; };
 		CE9642E21BB12A3C00AFD941 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		CE9642E31BB12A3C00AFD941 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
@@ -973,6 +987,7 @@
 			children = (
 				185619541AF7184500C7FE46 /* Info.plist */,
 				CE1F232B1CA3983800E944F3 /* mine.plist */,
+				CE8D9EE61CAE628700CED52B /* TestSwitch.plist */,
 				185619551AF7184500C7FE46 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1179,6 +1194,7 @@
 				CE194F6A1BE2032200E785C2 /* MASCompositeConstraint.h */,
 				CE194F6B1BE2032200E785C2 /* MASCompositeConstraint.m */,
 				CE194F6C1BE2032200E785C2 /* MASConstraint.h */,
+				CE8D9EF61CAE81B300CED52B /* MASConstraint.m */,
 				CE194F6D1BE2032200E785C2 /* MASConstraintMaker.h */,
 				CE194F6E1BE2032200E785C2 /* MASConstraintMaker.m */,
 				CE194F6F1BE2032200E785C2 /* MASLayoutConstraint.h */,
@@ -1194,9 +1210,12 @@
 				CE194F791BE2032200E785C2 /* NSArray+MASShorthandAdditions.h */,
 				CE194F7A1BE2032200E785C2 /* NSLayoutConstraint+MASDebugAdditions.h */,
 				CE194F7B1BE2032200E785C2 /* NSLayoutConstraint+MASDebugAdditions.m */,
+				CE8D9EF71CAE81B300CED52B /* MASConstraint+Private.h */,
 				CE194F7C1BE2032200E785C2 /* View+MASAdditions.h */,
 				CE194F7D1BE2032200E785C2 /* View+MASAdditions.m */,
 				CE194F7E1BE2032200E785C2 /* View+MASShorthandAdditions.h */,
+				CE8D9EF81CAE81B300CED52B /* ViewController+MASAdditions.h */,
+				CE8D9EF91CAE81B300CED52B /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
 			sourceTree = "<group>";
@@ -1359,6 +1378,17 @@
 				CEFFFCA71BAE56DD00C4C1CD /* SalaryCell.xib */,
 			);
 			name = "红包cell";
+			sourceTree = "<group>";
+		};
+		CE8D9EEC1CAE809A00CED52B /* QJVersionUpdateView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D9EED1CAE809A00CED52B /* QJCheckVersionUpdate.h */,
+				CE8D9EEE1CAE809A00CED52B /* QJCheckVersionUpdate.m */,
+				CE8D9EF11CAE809A00CED52B /* QJVersionUpdateVIew.h */,
+				CE8D9EF21CAE809A00CED52B /* QJVersionUpdateVIew.m */,
+			);
+			path = QJVersionUpdateView;
 			sourceTree = "<group>";
 		};
 		CE96431D1BB3776A00AFD941 /* 主页cell */ = {
@@ -1639,6 +1669,7 @@
 				CEEBBFBE1B3A5EDB0091675E /* NSString+Hashing */,
 				CE6B90081B41515800F87C26 /* ShopppingCar_Single */,
 				CE3357A41B60EBA3006B8D66 /* UserInfo_Single */,
+				CE8D9EEC1CAE809A00CED52B /* QJVersionUpdateView */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -1990,7 +2021,7 @@
 				TargetAttributes = {
 					1856194F1AF7184500C7FE46 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = WA6ARNEXKM;
+						DevelopmentTeam = 8CSVWNGTFL;
 					};
 					185619681AF7184500C7FE46 = {
 						CreatedOnToolsVersion = 6.2;
@@ -2078,6 +2109,7 @@
 				CEEEFB741B5C90A70079E0BC /* UMSShareListController.xib in Resources */,
 				CE75CD621BEB749600903E9D /* PayTypeCell.xib in Resources */,
 				CE9AB4C41B3D606A00BEFE6F /* OrderJudgeViewController.xib in Resources */,
+				CE8D9EE71CAE628700CED52B /* TestSwitch.plist in Resources */,
 				CEEBC0071B3A5EDB0091675E /* async.png in Resources */,
 				CE75CD711BEC457400903E9D /* RedEnvelopCell.xib in Resources */,
 				CEB359A61C1FFCA0009C1B8E /* BalanceViewController.xib in Resources */,
@@ -2183,12 +2215,14 @@
 				CECADF801B536339009AA2D1 /* OrderListCell.m in Sources */,
 				CEBDBE181BD8786000013177 /* SearchViewController.m in Sources */,
 				CEEBBFFE1B3A5EDB0091675E /* BaseModel.m in Sources */,
+				CE8D9EF51CAE809A00CED52B /* QJVersionUpdateVIew.m in Sources */,
 				CEFFFCC11BAE75E700C4C1CD /* ProductCell.m in Sources */,
 				CEBDBE351BD8C33E00013177 /* ZZTableView.m in Sources */,
 				CEEBC0501B3A5EDB0091675E /* SiteListModel.m in Sources */,
 				CEBDBE661BD9E14B00013177 /* DetailCell.m in Sources */,
 				CE1EDAF81B7D7440004D30DD /* CityCell.m in Sources */,
 				CEEBC0261B3A5EDB0091675E /* OrderStatesViewController.m in Sources */,
+				CE8D9EF31CAE809A00CED52B /* QJCheckVersionUpdate.m in Sources */,
 				CE0FD4C41B9AD4D300607BFB /* DataSigner.m in Sources */,
 				CE75CD701BEC457400903E9D /* RedEnvelopCell.m in Sources */,
 				18786D111AF9BDCC000A838E /* XHLoadMoreView.m in Sources */,
@@ -2246,6 +2280,7 @@
 				18786D131AF9BDCC000A838E /* XHRefreshControl.m in Sources */,
 				1853BE481AF861FC00BE2713 /* NSDictionary+expanded.m in Sources */,
 				CE9643711BB51ED600AFD941 /* SphereMenu.m in Sources */,
+				CE8D9EFB1CAE81B300CED52B /* ViewController+MASAdditions.m in Sources */,
 				CE194F831BE2032200E785C2 /* MASViewConstraint.m in Sources */,
 				CEF6DA8C1BDA106200B5201F /* ZZNetRequest.m in Sources */,
 				1853BE4E1AF8628700BE2713 /* UIImage+expanded.m in Sources */,
@@ -2262,6 +2297,7 @@
 				CEBDBE431BD905B200013177 /* QAndAViewController.m in Sources */,
 				CEFA9F201B4E8578003993F6 /* XHBaseViewController.m in Sources */,
 				CEEBC0161B3A5EDB0091675E /* AddressSearchViewController.m in Sources */,
+				CE8D9EFA1CAE81B300CED52B /* MASConstraint.m in Sources */,
 				CE9AB4C31B3D606A00BEFE6F /* OrderJudgeViewController.m in Sources */,
 				1853BE431AF8601200BE2713 /* NSString+expanded.m in Sources */,
 				CE194F7F1BE2032200E785C2 /* MASCompositeConstraint.m in Sources */,
@@ -2348,8 +2384,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2369,7 +2405,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "17a53438-be82-4768-9385-2b0d3f61377e";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2391,8 +2427,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -2405,7 +2441,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "17a53438-be82-4768-9385-2b0d3f61377e";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2417,8 +2453,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2453,9 +2489,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.renrencaichang.u;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renrencaichang.use;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17a53438-be82-4768-9385-2b0d3f61377e";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
@@ -2466,8 +2502,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shanghai Ren Ren Cai Chang Network Technology Co., Ltd. (WA6ARNEXKM)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2502,9 +2538,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.renrencaichang.u;
+				PRODUCT_BUNDLE_IDENTIFIER = com.renrencaichang.use;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "17a53438-be82-4768-9385-2b0d3f61377e";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;

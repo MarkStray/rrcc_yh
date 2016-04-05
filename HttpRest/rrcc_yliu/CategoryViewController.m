@@ -279,9 +279,9 @@ static void *searchview    = (void *)&searchview;
     [cell updateUIUsingModel:model];
     
     cell.purchaseBlockCB = ^ BOOL (ProductsModel *model){
-        [arr replaceObjectAtIndex:indexPath.row withObject:model];
-        self.itemListDict[self.dockList[indexPath.section]] = arr;//替换对应左侧分区的右侧数据源1
-        [self.itemTableView reloadData];
+        //[arr replaceObjectAtIndex:indexPath.row withObject:model];
+        //self.itemListDict[self.dockList[indexPath.section]] = arr;//替换对应左侧分区的右侧数据源1
+        //[self.itemTableView reloadData];
         return [[SingleShoppingCar sharedInstance] playerProductsModel:model];
         
         //_isShowDetail = YES;

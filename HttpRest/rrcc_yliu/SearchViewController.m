@@ -63,7 +63,6 @@
         hotbutton.backgroundColor=[UIColor whiteColor];
         [hotbutton SetBorderWithcornerRadius:13.f BorderWith:1.f AndBorderColor:[UIColor grayColor]];
         [hotbutton.titleLabel setFont:[UIFont systemFontOfSize:14]];
-        hotbutton.layer.masksToBounds=YES;
         [hotbutton addTarget:self action:@selector(hotsearchclick:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:hotbutton];
         [self.view addSubview:hotsearchlabel];
@@ -101,7 +100,6 @@
         [hisbutton.titleLabel setFont:[UIFont systemFontOfSize:14]];
         [hisbutton addTarget:self action:@selector(hotsearchclick:) forControlEvents:UIControlEventTouchUpInside];
         [hisbutton SetBorderWithcornerRadius:13.f BorderWith:1.f AndBorderColor:[UIColor grayColor]];
-        hisbutton.layer.masksToBounds=YES;
         buttonx=size.width+40+buttonx;
         [self.view addSubview:hisbutton];
         

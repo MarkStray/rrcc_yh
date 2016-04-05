@@ -10,6 +10,8 @@
 #import "FlashScreenView.h"
 #import "RCTabBarViewController.h"
 
+#import "QJCheckVersionUpdate.h"
+
 
 #import "PayEngine.h"//支付引擎
 
@@ -77,8 +79,21 @@
     
     [self initRootViewController];
     [self initWebManager];
+    
+    [self checkVerionUpdate];
+
     return YES;
 }
+
+/**
+ *  检查版本更新
+ */
+- (void)checkVerionUpdate
+{
+    QJCheckVersionUpdate *update = [[QJCheckVersionUpdate alloc] init];
+    [update showAlertView];
+}
+
 
 #pragma mark - 节日系统停用
 

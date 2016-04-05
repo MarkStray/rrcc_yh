@@ -339,19 +339,24 @@
 }
 #pragma mark - 发起支付 充值
 ////////////////////////////////////////////////////////////////////////
-#define isTest 0
+
 
 - (void)topupOnline {
     
     DLog(@"支付金额: %@",self.topUpModel.expenditure);
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"TestSwitch" ofType:@"plist"];
+    NSDictionary *testDict = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    BOOL isTest = [(NSNumber *)testDict[@"isTest"] boolValue];
+
     if (self.payType == 1) {/*微信支付*/
         NSString *WxpayPrice = nil;
-#if isTest == 1
-        WxpayPrice = @"1";
-#else
-        WxpayPrice = [NSString stringWithFormat:@"%.f",self.topUpModel.expenditure.floatValue * 100];//参数值不能带小数点 默认为分
-#endif
+        
+        if (isTest) {
+            WxpayPrice = @"1";
+        } else {
+            WxpayPrice = [NSString stringWithFormat:@"%.f",self.topUpModel.expenditure.floatValue * 100];//参数值不能带小数点 默认为分
+        }
         
         //创建支付签名对象
         payRequsestHandler *req = [payRequsestHandler alloc];
@@ -384,11 +389,12 @@
         
         NSString *AliPrice = nil;
 
-#if isTest == 1
-        AliPrice = @"0.01";
-#else
-        AliPrice = [NSString stringWithFormat:@"%.f",self.topUpModel.expenditure.floatValue];
-#endif
+        if (isTest) {
+            AliPrice = @"0.01";
+        } else {
+            AliPrice = [NSString stringWithFormat:@"%.f",self.topUpModel.expenditure.floatValue];
+        }
+
         /* 1.生成订单信息 */
         Order *order = [[Order alloc] init];
         order.partner = aPartnerID;
