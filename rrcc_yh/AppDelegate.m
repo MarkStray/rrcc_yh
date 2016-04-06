@@ -63,8 +63,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSString *path = NSHomeDirectory();
-    NSLog(@"path -> %@",path);
+    //NSString *path = NSHomeDirectory();
+    //NSLog(@"path -> %@",path);
         
     // 获取用户登陆信息 --> 配置下载数据参数
     [[SingleUserInfo sharedInstance] locationPlayerStatus];
