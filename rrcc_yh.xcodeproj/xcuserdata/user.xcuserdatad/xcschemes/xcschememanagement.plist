@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>VersionUpdateAPI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>rrcc_yh.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>185619681AF7184500C7FE46</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE8B10481CB4ACE600E8BBFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

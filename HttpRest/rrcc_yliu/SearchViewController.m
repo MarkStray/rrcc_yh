@@ -43,7 +43,7 @@
         UIImageView *bgimage=[[UIImageView alloc]initWithFrame:self.view.bounds];
         bgimage.image=[UIImage imageNamed:@"clearrecode"];
         [self.view addSubview:bgimage];
-        [self inithotsearchcontrol];
+//        [self inithotsearchcontrol];
         [self inithistorycontrol];
         
         }
@@ -72,7 +72,8 @@
 }
 -(void)inithistorycontrol
 {
-    UILabel *historylabel=[ZZFactory labelWithFrame:CGRectMake(5+3, 130, kScreenWidth-10, 44-10) font:[UIFont systemFontOfSize:14] color:[UIColor grayColor] text:@"历史记录"];
+    //    64+5 =》130
+    UILabel *historylabel=[ZZFactory labelWithFrame:CGRectMake(5+3, 64+5, kScreenWidth-10, 44-10) font:[UIFont systemFontOfSize:14] color:[UIColor grayColor] text:@"历史记录"];
     UIButton *delectbtn=[UIButton buttonWithType:UIButtonTypeCustom];
     delectbtn.frame=CGRectMake(0, kScreenHeight/2+15, kScreenWidth, 30);
     self.view.center=delectbtn.center;
@@ -94,7 +95,7 @@
                 buttonx=0;
             }
         }
-        UIButton *hisbutton=[ZZFactory buttonWithFrame:CGRectMake(5+buttonx, 130+34+buttony,size.width+30, 30) title:result titleColor:[UIColor blackColor] image:nil bgImage:nil];
+        UIButton *hisbutton=[ZZFactory buttonWithFrame:CGRectMake(5+buttonx, 64+5+34+buttony,size.width+30, 30) title:result titleColor:[UIColor blackColor] image:nil bgImage:nil];
         hisbutton.tag=1000+i;
         hisbutton.backgroundColor=[UIColor whiteColor];
         [hisbutton.titleLabel setFont:[UIFont systemFontOfSize:14]];
