@@ -30,6 +30,9 @@
 
 @property (nonatomic, copy) NSString *balance;
 
+// 支付过程返回的数据
+@property (nonatomic, strong) UserOrderDetailModel *resultOrderModel;
+
 
 @end
 
@@ -312,31 +315,34 @@
  *  二次支付
  */
 - (void)goPay {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择支付方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"余额支付", @"微信支付", @"支付宝支付", nil];
+    
+    NSString *balanceStr = [NSString stringWithFormat:@"余额支付(%@元)",self.balance];
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"选择支付方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"微信支付", @"支付宝支付", balanceStr, nil];
     [sheet showInView:self.view];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     switch (buttonIndex) {
-        case 0://余额
+        case 0://微信
+        {
+            [self prePayOnlineType:PayEngineTypeWX];
+        }
+            break;
+        case 1://支付宝
+        {
+            [self prePayOnlineType:PayEngineTypeAli];
+        }
+            break;
+        case 2://余额
         {
             if (self.orderModel.custprice.floatValue > self.balance.floatValue) {
                 show_animationAlert(@"当前余额不足请充值!");
             }  else {
                 [self balancePay];
             }
-
-        }
-            break;
-        case 1://微信
-        {
-            [self prePayOnlineType:PayEngineTypeWX];
-        }
-            break;
-        case 2://支付宝
-        {
-            [self prePayOnlineType:PayEngineTypeAli];
+            
         }
             break;
         default:
@@ -462,12 +468,12 @@
         NSDictionary *dic = (NSDictionary *)responseData;
         DLog(@"预支付： %@",dic);
         if ([dic[@"Success"] integerValue] == 1) {
-            self.orderModel = [UserOrderDetailModel creatWithDictionary:dic[@"CallInfo"]];
+            self.resultOrderModel = [UserOrderDetailModel creatWithDictionary:dic[@"CallInfo"]];
             
             //构造支付参数
-            NSString *payPrice = [NSString stringWithFormat:@"%.2f",self.orderModel.custprice.floatValue];
+            NSString *payPrice = [NSString stringWithFormat:@"%.2f",self.resultOrderModel.custprice.floatValue];
             //调第三方支付
-            [[PayEngine sharedPay] sendPayType:payType totalPrice:payPrice orderModel:self.orderModel];
+            [[PayEngine sharedPay] sendPayType:payType totalPrice:payPrice orderModel:self.resultOrderModel];
         } else {
             show_alertView(@"操作失败");
         }
