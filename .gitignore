@@ -53,5 +53,6 @@ fastlane/report.xml
 fastlane/screenshots
 
 # Ignore some like svn
-
-.svn/*
+#
+#.svn/*
+#
